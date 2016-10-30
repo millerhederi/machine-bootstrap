@@ -1,0 +1,13 @@
+<snippet>
+    <content><![CDATA[
+if not exists (select top(1) 1 from sys.check_constraints where object_id = object_id(N'[${1:schema}].[CK_${2:table}_${3:constraint}]')
+    and parent_object_id = object_id(N'[${1:schema}].[${2:table}]'))
+begin
+    alter table [${1:schema}].[${2:table}] add constraint [CK_${2:table}_${3:constraint}] check (${4:condition});
+end;
+go
+]]></content>
+    <tabTrigger>addcheckconstraint</tabTrigger>
+    <scope>source.sql</scope>
+    <description>Code snippet to add a check constraint to a table</description>
+</snippet>

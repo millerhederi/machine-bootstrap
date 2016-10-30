@@ -1,0 +1,21 @@
+<snippet>
+    <content><![CDATA[
+if object_id('[${1:dbo}].[${2:view}]') is null
+	exec('create view [${1:dbo}].[${2:view}] as select 1 as col;');
+go
+
+alter view [${1:dbo}].[${2:view}]
+as
+/*
+Last Modified:      Modified By:            Description:
+-----------------------------------------------------------------------------------------------------
+*/
+select
+	${3:view_definition}
+go
+]]></content>
+    <tabTrigger>alterview</tabTrigger>
+    <scope>source.sql</scope>
+    <description>Code snippet to alter a view</description>
+</snippet>
+

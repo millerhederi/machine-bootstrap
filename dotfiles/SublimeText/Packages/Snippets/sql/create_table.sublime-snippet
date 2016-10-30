@@ -1,0 +1,15 @@
+<snippet>
+    <content><![CDATA[
+if not exists (select top(1) 1 from sys.tables where object_id = object_id(N'[${1:dbo}].[${2:table}]'))
+begin
+    create table [${1:dbo}].[${2:table}] (
+         ${3:column_list}
+        ,constraint [PK_${2:table}] primary key clustered (/*Add Primary Key Columns*/)
+    );
+end;
+go
+]]></content>
+    <tabTrigger>createtable</tabTrigger>
+    <scope>source.sql</scope>
+    <description>Code snippet to create a table</description>
+</snippet>

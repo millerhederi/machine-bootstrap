@@ -1,0 +1,13 @@
+<snippet>
+    <content><![CDATA[
+if exists (select top(1) 1 from sys.foreign_keys where object_id = object_id(N'[${1:schema}].[FK_${2:table}_${3:fk}]')
+    and parent_object_id = object_id(N'[${1:schema}].[${2:table}]'))
+begin
+    alter table [${1:schema}].[${2:table}] drop constraint [FK_${2:table}_${3:fk}];
+end;
+go
+]]></content>
+    <tabTrigger>dropforeignkey</tabTrigger>
+    <scope>source.sql</scope>
+    <description>Code snippet to drop a foreign key from a table</description>
+</snippet>

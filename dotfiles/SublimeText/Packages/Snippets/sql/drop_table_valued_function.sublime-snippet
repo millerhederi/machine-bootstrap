@@ -1,0 +1,12 @@
+<snippet>
+    <content><![CDATA[
+if exists (select top(1) 1 from sys.objects where type = N'IF' and name = N'ITVF_${2:function}' and schema_id = schema_id(N'${1:schema}'))
+begin
+    drop function [${1:schema}].[ITVF_${2:function}];
+end;
+go
+]]></content>
+    <tabTrigger>droptablevaluedfunction</tabTrigger>
+    <scope>source.sql</scope>
+    <description>Code snippet to drop an inlined table value function</description>
+</snippet>

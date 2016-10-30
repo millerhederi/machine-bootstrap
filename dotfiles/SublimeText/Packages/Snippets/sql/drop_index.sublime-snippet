@@ -1,0 +1,12 @@
+<snippet>
+    <content><![CDATA[
+if exists (select top(1) 1 from sys.indexes where name = N'IX_${2:table}_${3:index}' and object_id = object_id(N'[${1:schema}].[${2:table}]'))
+begin
+    drop index [IX_${2:table}_${3:index}] on [${1:schema}].[${2:table}];
+end;
+go
+]]></content>
+    <tabTrigger>dropindex</tabTrigger>
+    <scope>source.sql</scope>
+    <description>Code snippet to drop an index on a table</description>
+</snippet>

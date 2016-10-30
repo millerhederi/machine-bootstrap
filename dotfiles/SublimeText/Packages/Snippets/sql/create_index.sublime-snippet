@@ -1,0 +1,12 @@
+<snippet>
+    <content><![CDATA[
+if not exists (select top(1) 1 from sys.indexes where name = N'IX_${2:table}_${3:index}' and object_id = object_id(N'[${1:schema}].[${2:table}]'))
+begin
+    create nonclustered index [IX_${2:table}_${3:index}] on [${1:schema}].[${2:table}] ([${4:column_list}]);
+end;
+go
+]]></content>
+    <tabTrigger>createindex</tabTrigger>
+    <scope>source.sql</scope>
+    <description>Code snippet to create an index on a table</description>
+</snippet>

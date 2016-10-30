@@ -1,0 +1,13 @@
+<snippet>
+    <content><![CDATA[
+if not exists (select top(1) 1 from sys.foreign_keys where object_id = object_id(N'[${1:schema}].[FK_${2:table}_${3:fk}]')
+    and parent_object_id = object_id(N'[${1:schema}].[${2:table}]'))
+begin
+    alter table [${1:schema}].[${2:table}] with check add constraint [FK_${2:table}_${3:fk}] foreign key([${4:source_column}]) references [${5:schema_target}].[${6:table_target}]([${7:target_column}]);
+end;
+go
+]]></content>
+    <tabTrigger>addforeignkey</tabTrigger>
+    <scope>source.sql</scope>
+    <description>Code snippet to add a foreign key to a table</description>
+</snippet>

@@ -1,0 +1,8 @@
+<snippet>
+    <content><![CDATA[
+-- ApplySchemaFile '${1:name}'
+]]></content>
+    <tabTrigger>applyschemafile</tabTrigger>
+    <scope>source.sql</scope>
+    <description>Code snippet to apply a schema file</description>
+</snippet>

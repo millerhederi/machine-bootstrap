@@ -1,0 +1,24 @@
+<snippet>
+	<content><![CDATA[
+if object_id('[${1:dbo}].[${2:name}]') is null
+  exec('create procedure [${1:dbo}].[${2:name}] as select 1 as col;');
+go
+
+alter procedure [${1:dbo}].[${2:name}]
+    ${3:params}
+as
+/*   
+Last Modified:      Modified By:            Description:
+-----------------------------------------------------------------------------------------------------
+01/03/2019          Miller                  Created
+*/
+begin
+    set nocount on;
+
+end;
+go
+]]></content>
+	<tabTrigger>createprocedure</tabTrigger>
+    <scope>source.sql</scope>
+    <description>Code snippet to create a new stored procedure</description>
+</snippet>

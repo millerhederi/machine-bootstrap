@@ -1,0 +1,8 @@
+<snippet>
+    <content><![CDATA[
+exec sp_refreshview '[${1:schema}].[VW_${2:view}]';
+]]></content>
+    <tabTrigger>refreshview</tabTrigger>
+    <scope>source.sql</scope>
+    <description>Code snippet to manually update a view</description>
+</snippet>

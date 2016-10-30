@@ -1,0 +1,17 @@
+<snippet>
+    <content><![CDATA[
+delete s
+from [dbo].[Setting] s
+    inner join [dbo].[SettingDefinition] sd on s.SettingDefinitionID = sd.ID
+where sd.SettingName = '${1:name}';
+
+delete [dbo].[SettingDefinition] where SettingName = '${1:name}';
+go
+]]></content>
+    <tabTrigger>deletesettingdefinition</tabTrigger>
+    <scope>source.sql</scope>
+    <description>Code snippet to delete a setting definition</description>
+</snippet>
+
+
+

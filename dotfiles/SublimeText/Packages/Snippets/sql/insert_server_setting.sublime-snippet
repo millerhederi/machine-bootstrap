@@ -1,0 +1,27 @@
+<snippet>
+    <content><![CDATA[
+declare @CurrentTimestamp [datetime2](7) = [dbo].[fn_GetUtcDate]();
+
+if not exists (select top(1) 1 from [dbo].[ServerSetting] where Name = '${1:name}')
+begin
+    insert into [dbo].[ServerSetting] ([ID], [Name], [Value], [Description], [DataType], [CreatedDate], [UpdatedDate])
+    values
+    (
+         [dbo].[NewCombGuid](default)
+        ,'${1:name}'
+        ,'${2:value}'
+        ,'${3:description}'
+        ,${4:0=string|1=int|2=bool|3=timespan|4=email}
+        ,@CurrentTimestamp
+        ,@CurrentTimestamp
+    );
+end;
+go
+]]></content>
+    <tabTrigger>insertserversetting</tabTrigger>
+    <scope>source.sql</scope>
+    <description>Code snippet to insert a new server setting</description>
+</snippet>
+
+
+

@@ -1,0 +1,12 @@
+<snippet>
+    <content><![CDATA[
+if exists (select top(1) 1 from sys.columns where Name = N'${3:column}' and object_id = object_id(N'[${1:schema}].[${2:table}]'))
+begin
+    alter table [${1:schema}].[${2:table}] drop column [${3:column}];
+end;
+go
+]]></content>
+    <tabTrigger>dropcolumn</tabTrigger>
+    <scope>source.sql</scope>
+    <description>Code snippet to drop a column from a table</description>
+</snippet>

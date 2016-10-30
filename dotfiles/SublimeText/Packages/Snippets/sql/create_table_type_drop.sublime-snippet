@@ -1,0 +1,16 @@
+<snippet>
+    <content><![CDATA[
+if exists (select top(1) 1 from sys.types where name = N'${1:name}_Type' and schema_id = schema_id(N'[${2:schema}]'))
+begin
+    drop type [${2:schema}].[${1:name}_Type];
+end;
+
+create type [${2:schema}].[${1:name}_Type] as table (
+    ${3:column_list}
+);
+go
+]]></content>
+    <tabTrigger>createtabletypedrop</tabTrigger>
+    <scope>source.sql</scope>
+    <description>Code snippet to drop then create a new user defined table type</description>
+</snippet>
