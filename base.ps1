@@ -1,12 +1,16 @@
 $DotfilesDirectory = "$env:HomeDrive\dev\git\millerhederi\machine-bootstrap\dotfiles"
 
 #region Configure Windows Explorer
-# http://stackoverflow.com/questions/4491999/configure-windows-explorer-folder-options-through-powershell
 $ExplorerRegKey = 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced'
 Set-ItemProperty -Path $ExplorerRegKey -Name Hidden -Value 1          # Show hidden files
 Set-ItemProperty -Path $ExplorerRegKey -Name HideFileExt -Value 0     # Show file extensions
 Set-ItemProperty -Path $ExplorerRegKey -Name ShowSuperHidden -Value 0 # Hide system hidden files
 Set-ItemProperty -Path $ExplorerRegKey -Name LaunchTo -Value 1        # Open to `This PC` instead of `Quick Access`
+
+$SearchRegKey = 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Search'
+Set-ItemProperty -Path $SearchRegKey -Name SearchboxTaskbarMode -Value 0 # Hide Cortana search box in task bar
+Set-ItemProperty -Path $SearchRegKey -Name BingSearchEnabled -Value 0    # Disable Bing search results from start menu
+
 Stop-Process -ProcessName explorer
 #endregion
 
