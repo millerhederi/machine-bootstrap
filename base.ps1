@@ -1,5 +1,13 @@
 $DotfilesDirectory = "$env:HomeDrive\dev\git\millerhederi\machine-bootstrap\dotfiles"
 
+#region Powershell Profile
+$ScriptsDirectory = "$(Split-Path $Profile)\Scripts"
+New-Item -ItemType Directory -Path "$(Split-Path $Profile)" -Force
+New-Item -ItemType SymbolicLink -Path "$Profile" -Value "$DotfilesDirectory\Powershell\Microsoft.PowerShell_profile.ps1"
+New-Item -ItemType SymbolicLink -Path "$ScriptsDirectory" -Value "$DotfilesDirectory\Powershell\Scripts"
+$env:path += ";$ScriptsDirectory" # Add to path so we can use scripts below
+#endregion
+
 #region Configure Windows Explorer
 $ExplorerRegKey = 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced'
 Set-ItemProperty -Path $ExplorerRegKey -Name Hidden -Value 1          # Show hidden files
@@ -11,13 +19,9 @@ $SearchRegKey = 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Search'
 Set-ItemProperty -Path $SearchRegKey -Name SearchboxTaskbarMode -Value 0 # Hide Cortana search box in task bar
 Set-ItemProperty -Path $SearchRegKey -Name BingSearchEnabled -Value 0    # Disable Bing search results from start menu
 
-Stop-Process -ProcessName explorer
-#endregion
+Add-QuickAccess -Path "$env:HomeDrive\dev\git"
 
-#region Powershell Profile
-New-Item -ItemType Directory -Path "$(Split-Path $Profile)" -Force
-New-Item -ItemType SymbolicLink -Path "$Profile" -Value "$DotfilesDirectory\Powershell\Microsoft.PowerShell_profile.ps1"
-New-Item -ItemType SymbolicLink -Path "$(Split-Path $Profile)\Scripts" -Value "$DotfilesDirectory\Powershell\Scripts"
+Stop-Process -ProcessName explorer
 #endregion
 
 #region Visual Studio Code
