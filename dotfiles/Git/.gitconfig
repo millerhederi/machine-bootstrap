@@ -1,5 +1,5 @@
-# [include]
-# 	path = ~/.gitconfig_private # Used to store name/email info
+[include]
+	path = ~/.gitconfig_private
 [core]
 	autocrlf = true
 	editor = 'c:/program files/sublime text 3/subl.exe' -w
