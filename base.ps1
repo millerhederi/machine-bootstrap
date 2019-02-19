@@ -25,8 +25,8 @@ Stop-Process -ProcessName explorer
 #endregion
 
 #region Visual Studio Code
-New-Item -ItemType Directory -Path "$env:AppData\Code" -Force
-New-Item -ItemType SymbolicLink -Path "$env:AppData\Code\User" -Value "$DotfilesDirectory\VSCode\User"
+New-Item -ItemType Directory -Path "$env:AppData\Code\User" -Force
+New-Item -ItemType SymbolicLink -Path "$env:AppData\Code\User\settings.json" -Value "$DotfilesDirectory\VSCode\User\settings.json"
 cinst vscode -y
 $env:Path += ";${env:ProgramFiles}\Microsoft VS Code\bin"
 code --install-extension ms-vscode.PowerShell
