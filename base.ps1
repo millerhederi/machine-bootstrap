@@ -20,6 +20,7 @@ Set-ItemProperty -Path $SearchRegKey -Name SearchboxTaskbarMode -Value 0 # Hide 
 Set-ItemProperty -Path $SearchRegKey -Name BingSearchEnabled -Value 0    # Disable Bing search results from start menu
 
 Add-QuickAccess -Path "$env:HomeDrive\dev\git"
+Add-QuickAccess -Path "$env:UserProfile"
 
 Stop-Process -ProcessName explorer
 #endregion
