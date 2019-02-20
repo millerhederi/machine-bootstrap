@@ -16,4 +16,6 @@ if (Test-Path -Path $PrivateProfilesRootDirectory -PathType Container)
 }
 #endregion
 
+Set-Alias e Open-Explorer
+
 Set-Location -Path $dev
