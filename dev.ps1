@@ -7,3 +7,4 @@ if (-not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdenti
 
 cinst visualstudio2017professional -y
 cinst visualstudio2017-workload-netweb -y
+cinst resharper -y
