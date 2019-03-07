@@ -16,6 +16,17 @@ if (Test-Path -Path $PrivateProfilesRootDirectory -PathType Container)
 }
 #endregion
 
+function gwip ([string]$message) {
+    if (!$message) {
+        $message = "WIP"
+    }
+    else {
+        $message = "WIP: " + $message
+    }
+
+    git commit -m $message
+}
+
 Set-Alias e Open-Explorer
 
 Set-Location -Path $dev
