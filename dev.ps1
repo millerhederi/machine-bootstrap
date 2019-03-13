@@ -10,3 +10,4 @@ cinst visualstudio2017-workload-netweb -y
 cinst resharper -y
 cinst sql-server-management-studio -y
 cinst jetbrains-rider -y
+cinst nodejs-install -y
