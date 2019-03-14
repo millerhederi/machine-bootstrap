@@ -88,3 +88,4 @@ cinst vlc -y
 cinst beyondcompare -y
 cinst postman -y
 cinst keepass -y
+cinst synctrayzor -y
