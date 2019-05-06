@@ -35,6 +35,7 @@ code --install-extension ms-vscode.sublime-keybindings
 code --install-extension ms-python.python
 code --install-extension ms-vscode.Go
 code --install-extension Ionide.Ionide-fsharp
+code --install-extension PeterJausovec.vscode-docker
 #endregion
 
 #region ConEmu
