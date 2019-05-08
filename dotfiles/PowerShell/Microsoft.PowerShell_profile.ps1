@@ -16,10 +16,6 @@ if (Test-Path -Path $PrivateProfilesRootDirectory -PathType Container)
 }
 #endregion
 
-function gcob ([string]$branch) {
-    git checkout -b $branch
-}
-
 function gwip ([string]$message) {
     if (!$message) {
         $message = "WIP"
