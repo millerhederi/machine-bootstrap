@@ -1,0 +1,10 @@
+[core]
+    editor = 'c:/program files/sublime text 3/subl.exe' -w
+[diff]
+    tool = bc
+[difftool "bc"]
+    path = c:/program files/beyond compare 4/bcomp.exe
+[merge]
+    tool = bc
+[mergetool "bc"]
+    path = c:/program files/beyond compare 4/bcomp.exe

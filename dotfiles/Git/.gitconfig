@@ -1,25 +1,3 @@
 [include]
-	path = ~/.gitconfig_private
-[core]
-	autocrlf = true
-	editor = 'c:/program files/sublime text 3/subl.exe' -w
-[diff]
-	tool = bc
-[difftool]
-	prompt = false
-[difftool "bc"]
-	path = c:/program files/beyond compare 4/bcomp.exe
-[merge]
-	tool = bc
-[mergetool]
-	keepbackup = false
-[mergetool "bc"]
-	path = c:/program files/beyond compare 4/bcomp.exe
-[push]
-	default = current
-[alias]
-	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold yellow)<%an>%Creset' --abbrev-commit --date=relative
-[alias]
-	amend = commit --amend --no-edit
-[alias]
-	cont = rebase --continue
+    path = ~/.gitconfig_xplat
+    path = ~/.gitconfig_plat

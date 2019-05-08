@@ -44,7 +44,12 @@ cinst conemu -y
 #endregion
 
 #region Configure .gitconfig
-New-Item -ItemType SymbolicLink -Path "$env:UserProfile\.gitconfig" -Value "$DotfilesDirectory\Git\.gitconfig"
+if  (-not (Test-Path "$env:UserProfile\.gitconfig")) {
+    Copy-Item -Path "$DotfilesDirectory\Git\.gitconfig" -Destination "$env:UserProfile\.gitconfig"
+}
+
+New-Item -ItemType SymbolicLink -Path "$env:UserProfile\.gitconfig_xplat" -Value "$DotfilesDirectory\Git\.gitconfig_xplat" -Force
+New-Item -ItemType SymbolicLink -Path "$env:UserProfile\.gitconfig_plat" -Value "$DotfilesDirectory\Git\.gitconfig_windows" -Force
 #endregion
 
 #region VeraCrypt
