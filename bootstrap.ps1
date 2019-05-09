@@ -20,10 +20,20 @@ Update-SessionEnvironment
 
 $BootstrapDirectory = "$env:HomeDrive\dev\git\millerhederi\machine-bootstrap"
 
-# Clone repo via https since we have not set up our ssh public/private key pair yet, but switch
-# remote url to ssh after cloning with the assumption we will be setting up ssh keys later and
-# will want to use those for authenticating
-git clone https://github.com/millerhederi/machine-bootstrap.git $BootstrapDirectory
+if (-not (Test-Path "$BootstrapDirectory")) {
+    git clone https://github.com/millerhederi/machine-bootstrap.git $BootstrapDirectory
+}
+else {
+    # The assumption is that the remote url is set to ssh, we need to update to https otherwise
+    # we might get authentication issues if we have not configured our ssh key pair yet
+    git -C "$BootstrapDirectory" remote set-url origin https://github.com/millerhederi/machine-bootstrap.git
+    git -C "$BootstrapDirectory" fetch origin
+    git -C "$BootstrapDirectory" reset --hard origin/master
+    git -C "$BootstrapDirectory" clean -df
+}
+
+# Switch the remote url to ssh after cloning with the assumption we will be setting up ssh keys 
+# later and will want to use those for authenticating
 git -C "$BootstrapDirectory" remote set-url origin git@github.com:millerhederi/machine-bootstrap.git
 
 & "$BootstrapDirectory\base.ps1"
