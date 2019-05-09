@@ -25,6 +25,13 @@ Add-QuickAccess -Path "$env:UserProfile"
 Stop-Process -ProcessName explorer
 #endregion
 
+#region Theme Windows
+$DwmRegKey = 'HKCU:\Software\Microsoft\Windows\DWM'
+New-ItemProperty -Path $DwmRegKey -Name ColorPrevalence -Value 1 -PropertyType DWORD -Force              # Enable setting color of title bar
+New-ItemProperty -Path $DwmRegKey -Name AccentColor -Value 4282927692 -PropertyType DWORD -Force         # Set active title bar color to dark gray
+New-ItemProperty -Path $DwmRegKey -Name AccentColorInactive -Value 4282927692 -PropertyType DWORD -Force # Set inactive title bar color to dark gray
+#endregion
+
 #region Visual Studio Code
 New-Item -ItemType Directory -Path "$env:AppData\Code\User" -Force
 New-Item -ItemType SymbolicLink -Path "$env:AppData\Code\User\settings.json" -Value "$DotfilesDirectory\VSCode\User\settings.json" -Force
