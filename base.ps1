@@ -76,7 +76,7 @@ Write-Output 'st3' | cinst sublimetext3.packagecontrol -y
 Install-PackageProvider -Name Nuget -Force
 Install-Module -Name posh-git -Scope CurrentUser -Force
 Install-Module -Name z -Scope CurrentUser -AllowClobber -Force
-Install-Module -Name AWSPowerShell -Force
+Install-Module -Name AWSPowerShell -Scope CurrentUser -AllowClobber -Force
 
 cinst googlechrome -y
 cinst firefox -y
