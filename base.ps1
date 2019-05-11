@@ -80,6 +80,16 @@ cinst sublimetext3 -y
 Write-Output 'st3' | cinst sublimetext3.packagecontrol -y
 #endregion
 
+#region WSL
+Enable-WindowsOptionalFeature -Online -NoRestart -FeatureName Microsoft-Windows-Subsystem-Linux
+
+if (-not (Get-AppxPackage CanonicalGroupLimited.Ubuntu18.04onWindows -ErrorAction SilentlyContinue)) {
+    Invoke-WebRequest -Uri https://aka.ms/wsl-ubuntu-1804 -OutFile "$env:TEMP\Ubuntu.appx" -UseBasicParsing
+
+    Add-AppxPackage -Path $env:TEMP\Ubuntu.appx
+}
+#endregion
+
 Install-PackageProvider -Name Nuget -Force
 Install-Module -Name posh-git -Scope CurrentUser -Force
 Install-Module -Name z -Scope CurrentUser -AllowClobber -Force
