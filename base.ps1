@@ -45,11 +45,6 @@ code --install-extension Ionide.Ionide-fsharp
 code --install-extension PeterJausovec.vscode-docker
 #endregion
 
-#region ConEmu
-Copy-Item -Path "$DotfilesDirectory\ConEmu\ConEmu.xml" -Destination "$env:AppData\ConEmu.xml" -Force
-cinst conemu -y
-#endregion
-
 #region Configure .gitconfig
 if  (-not (Test-Path "$env:UserProfile\.gitconfig")) {
     Copy-Item -Path "$DotfilesDirectory\Git\.gitconfig" -Destination "$env:UserProfile\.gitconfig"
