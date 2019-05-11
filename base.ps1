@@ -87,6 +87,13 @@ if (-not (Get-AppxPackage CanonicalGroupLimited.Ubuntu18.04onWindows -ErrorActio
     Invoke-WebRequest -Uri https://aka.ms/wsl-ubuntu-1804 -OutFile "$env:TEMP\Ubuntu.appx" -UseBasicParsing
 
     Add-AppxPackage -Path $env:TEMP\Ubuntu.appx
+
+    $UbuntuDirectory = (Get-AppxPackage CanonicalGroupLimited.Ubuntu18.04onWindows).InstallLocation
+    New-ItemProperty `
+        HKCU:\Software\Microsoft\Windows\CurrentVersion\RunOnce `
+        -Name InitWSL `
+        -Value "powershell.exe -NoExit `"& { & '$UbuntuDirectory\ubuntu1804.exe' -c '/mnt/c/dev/git/millerhederi/machine-bootstrap/wsl/bootstrap.sh' }`"" `
+        -Force
 }
 #endregion
 
