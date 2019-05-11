@@ -104,7 +104,6 @@ cinst 7zip.install -y
 cinst openvpn -y
 cinst dropbox -y
 cinst youtube-dl -y
-cinst f.lux -y
 cinst windirstat -y
 cinst sdelete -y
 cinst procexp -y
