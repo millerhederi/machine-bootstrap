@@ -5,8 +5,9 @@ if (-not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdenti
     return
 }
 
-cinst visualstudio2017professional -y
-cinst visualstudio2017-workload-netweb -y
+cinst visualstudio2019professional -y
+cinst visualstudio2019-workload-netweb -y
+cinst visualstudio2019-workload-netcoretools -y
 cinst resharper -y
 cinst sql-server-management-studio -y
 cinst jetbrains-rider -y
