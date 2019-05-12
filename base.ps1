@@ -14,6 +14,7 @@ Set-ItemProperty -Path $ExplorerRegKey -Name Hidden -Value 1          # Show hid
 Set-ItemProperty -Path $ExplorerRegKey -Name HideFileExt -Value 0     # Show file extensions
 Set-ItemProperty -Path $ExplorerRegKey -Name ShowSuperHidden -Value 0 # Hide system hidden files
 Set-ItemProperty -Path $ExplorerRegKey -Name LaunchTo -Value 1        # Open to `This PC` instead of `Quick Access`
+New-ItemProperty -Path $ExplorerRegKey -Name AutoCheckSelect -Value 0 -PropertyType DWORD -Force # Turn off `Use check boxes to select items`
 
 $SearchRegKey = 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Search'
 Set-ItemProperty -Path $SearchRegKey -Name SearchboxTaskbarMode -Value 0 # Hide Cortana search box in task bar
