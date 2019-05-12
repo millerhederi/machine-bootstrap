@@ -99,6 +99,8 @@ if (-not (Get-AppxPackage CanonicalGroupLimited.Ubuntu18.04onWindows -ErrorActio
 }
 #endregion
 
+Enable-WindowsOptionalFeature -Online -NoRestart -FeatureName Microsoft-Hyper-V -All
+
 Install-PackageProvider -Name Nuget -Force
 Install-Module -Name posh-git -Scope CurrentUser -Force
 Install-Module -Name z -Scope CurrentUser -AllowClobber -Force
@@ -119,3 +121,13 @@ cinst beyondcompare -y
 cinst postman -y
 cinst keepass -y
 cinst synctrayzor -y
+
+cinst visualstudio2019professional -y
+cinst visualstudio2019-workload-netweb -y
+cinst visualstudio2019-workload-netcoretools -y
+cinst resharper -y
+cinst sql-server-management-studio -y
+cinst jetbrains-rider -y
+cinst docker-desktop -y
+cinst docker-compose -y
+cinst nodejs.install -y
