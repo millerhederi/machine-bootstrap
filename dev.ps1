@@ -5,6 +5,8 @@ if (-not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdenti
     return
 }
 
+Enable-WindowsOptionalFeature -Online -NoRestart -FeatureName Microsoft-Hyper-V -All
+
 cinst visualstudio2019professional -y
 cinst visualstudio2019-workload-netweb -y
 cinst visualstudio2019-workload-netcoretools -y
