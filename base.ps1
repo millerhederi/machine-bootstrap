@@ -48,6 +48,11 @@ code --install-extension PeterJausovec.vscode-docker
 code --install-extension mark-hansen.hledger-vscode
 #endregion
 
+#region ConEmu
+Copy-Item -Path "$DotfilesDirectory\ConEmu\ConEmu.xml" -Destination "$env:AppData\ConEmu.xml" -Force
+cinst conemu -y
+#endregion
+
 #region Configure .gitconfig
 if  (-not (Test-Path "$env:UserProfile\.gitconfig")) {
     Copy-Item -Path "$DotfilesDirectory\Git\.gitconfig" -Destination "$env:UserProfile\.gitconfig"
