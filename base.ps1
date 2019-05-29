@@ -1,3 +1,5 @@
+$ErrorActionPreference="Stop"
+
 # Check if running as an adminstrator, if not, self elevate
 if (-not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator))
 {
