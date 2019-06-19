@@ -145,6 +145,7 @@ cinst visualstudio2019-workload-netweb -y
 cinst visualstudio2019-workload-netcoretools -y
 cinst resharper -y
 cinst sql-server-management-studio -y
+cinst mysql.workbench -y
 cinst jetbrains-rider -y
 cinst docker-desktop -y
 cinst docker-compose -y
