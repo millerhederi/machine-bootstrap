@@ -139,7 +139,7 @@ cinst sdelete -y
 cinst procexp -y
 cinst vlc -y
 cinst beyondcompare -y
-cinst postman -y
+cinst insomnia-rest-api-client -y
 cinst keepass -y
 cinst synctrayzor -y
 
