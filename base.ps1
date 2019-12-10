@@ -18,6 +18,9 @@ New-Item -ItemType SymbolicLink -Path "$ScriptsDirectory" -Value "$DotfilesDirec
 $env:path += ";$ScriptsDirectory" # Add to path so we can use scripts below
 #endregion
 
+# Enable long file paths
+New-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem' -Name LongPathsEnabled -Value 1 -PropertyType DWORD -Force
+
 #region Configure Windows Explorer
 $ExplorerRegKey = 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced'
 Set-ItemProperty -Path $ExplorerRegKey -Name Hidden -Value 1          # Show hidden files
@@ -140,7 +143,7 @@ cinst postman -y
 cinst keepass -y
 cinst synctrayzor -y
 
-cinst visualstudio2019professional -y
+cinst visualstudio2019community -y
 cinst visualstudio2019-workload-netweb -y
 cinst visualstudio2019-workload-netcoretools -y
 cinst resharper -y
