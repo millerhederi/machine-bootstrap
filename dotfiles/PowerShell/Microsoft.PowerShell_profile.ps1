@@ -28,5 +28,3 @@ function gwip ([string]$message) {
 }
 
 Set-Alias e Open-Explorer
-
-Set-Location -Path $dev
