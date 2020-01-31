@@ -141,6 +141,7 @@ cinst vlc -y
 cinst beyondcompare -y
 cinst insomnia-rest-api-client -y
 cinst keepass -y
+cinst keepass-yet-another-favicon-downloader -y
 
 cinst visualstudio2019community -y
 cinst visualstudio2019-workload-netweb -y
