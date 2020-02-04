@@ -136,6 +136,7 @@ cinst beyondcompare -y
 cinst insomnia-rest-api-client -y
 cinst keepass -y
 cinst keepass-yet-another-favicon-downloader -y
+cinst microsoft-windows-terminal -y
 
 cinst visualstudio2019community -y
 cinst visualstudio2019-workload-netweb -y
