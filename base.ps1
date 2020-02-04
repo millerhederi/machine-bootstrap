@@ -148,3 +148,6 @@ cinst jetbrains-rider -y
 cinst docker-desktop -y
 cinst docker-compose -y
 cinst nodejs.install -y
+
+# Remove all desktop icons
+Remove-Item "$env:UserProfile\Desktop\*.lnk"
