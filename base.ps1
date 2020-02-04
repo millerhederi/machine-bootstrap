@@ -54,11 +54,11 @@ cinst vscode -y
 $env:Path += ";${env:ProgramFiles}\Microsoft VS Code\bin"
 code --install-extension ms-vscode.PowerShell
 code --install-extension ms-vscode.sublime-keybindings
-code --install-extension ms-python.python
-code --install-extension ms-vscode.Go
 code --install-extension Ionide.Ionide-fsharp
-code --install-extension PeterJausovec.vscode-docker
+code --install-extension ms-azuretools.vscode-docker
 code --install-extension mark-hansen.hledger-vscode
+code --install-extension dsznajder.es7-react-js-snippets
+code --install-extension ms-vscode-remote.remote-wsl
 #endregion
 
 #region ConEmu
