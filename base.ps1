@@ -78,7 +78,7 @@ cinst veracrypt -y
 #region SublimeMerge
 New-Item -ItemType Directory -Path "$env:AppData\Sublime Merge\Packages" -Force
 New-Item -ItemType SymbolicLink -Path "$env:AppData\Sublime Merge\Packages\User" -Value "$DotfilesDirectory\SublimeMerge\Packages\User" -Force
-# There is no chocolatey package for sublime merge yet
+cinst sublimemerge -y
 #endregion
 
 #region SublimeText
