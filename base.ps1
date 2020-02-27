@@ -57,7 +57,7 @@ code --install-extension Ionide.Ionide-fsharp
 code --install-extension ms-azuretools.vscode-docker
 code --install-extension mark-hansen.hledger-vscode
 code --install-extension dsznajder.es7-react-js-snippets
-code --install-extension ms-vscode-remote.remote-wsl
+code --install-extension ms-vscode-remote.vscode-remote-extensionpack
 #endregion
 
 #region Configure .gitconfig
