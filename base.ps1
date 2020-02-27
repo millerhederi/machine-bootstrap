@@ -113,6 +113,14 @@ if (-not (Get-AppxPackage CanonicalGroupLimited.Ubuntu18.04onWindows -ErrorActio
 }
 #endregion
 
+#region Windows Terminal
+cinst microsoft-windows-terminal -y
+$TerminalDirectory = "$env:LocalAppData\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe"
+New-Item -ItemType Directory -Path "$TerminalDirectory" -Force
+Remove-Item -Path "$TerminalDirectory\LocalState" -Force -Recurse -ErrorAction SilentlyContinue
+New-Item -ItemType SymbolicLink -Path "$TerminalDirectory\LocalState" -Value "$DotfilesDirectory\Terminal" -Force
+#endregion
+
 Enable-WindowsOptionalFeature -Online -NoRestart -FeatureName Microsoft-Hyper-V -All
 
 Install-PackageProvider -Name Nuget -Force
@@ -136,7 +144,6 @@ cinst beyondcompare -y
 cinst insomnia-rest-api-client -y
 cinst keepass -y
 cinst keepass-yet-another-favicon-downloader -y
-cinst microsoft-windows-terminal -y
 
 cinst visualstudio2019community -y
 cinst visualstudio2019-workload-netweb -y
