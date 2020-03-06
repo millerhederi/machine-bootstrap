@@ -14,6 +14,7 @@ $DotfilesDirectory = "$env:HomeDrive\dev\git\millerhederi\machine-bootstrap\dotf
 $ScriptsDirectory = "$(Split-Path $Profile)\Scripts"
 New-Item -ItemType Directory -Path "$(Split-Path $Profile)" -Force
 New-Item -ItemType SymbolicLink -Path "$Profile" -Value "$DotfilesDirectory\Powershell\Microsoft.PowerShell_profile.ps1" -Force
+New-Item -ItemType SymbolicLink -Path "$(Split-Path $Profile)\.psshortcut" -Value "$DotfilesDirectory\PowerShell\.psshortcut" -Force
 New-Item -ItemType SymbolicLink -Path "$ScriptsDirectory" -Value "$DotfilesDirectory\Powershell\Scripts" -Force
 $env:path += ";$ScriptsDirectory" # Add to path so we can use scripts below
 #endregion
