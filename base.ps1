@@ -19,6 +19,13 @@ New-Item -ItemType SymbolicLink -Path "$ScriptsDirectory" -Value "$DotfilesDirec
 $env:path += ";$ScriptsDirectory" # Add to path so we can use scripts below
 #endregion
 
+#region PowerShell Core
+$PowerShellCoreProfile = "$env:UserProfile\Documents\PowerShell\Microsoft.PowerShell_profile.ps1"
+cinst powershell-core -y
+New-Item -ItemType Directory -Path "$(Split-Path $PowerShellCoreProfile)" -Force
+New-Item -ItemType SymbolicLink -Path $PowerShellCoreProfile -Value "$DotfilesDirectory\PowerShellCore\Microsoft.PowerShell_profile.ps1" -Force
+#endregion
+
 # Enable long file paths
 New-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem' -Name LongPathsEnabled -Value 1 -PropertyType DWORD -Force
 
