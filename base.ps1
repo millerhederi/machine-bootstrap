@@ -10,20 +10,24 @@ if (-not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdenti
 
 $DotfilesDirectory = "$env:HomeDrive\dev\git\millerhederi\machine-bootstrap\dotfiles"
 
-#region Powershell Profile
-$ScriptsDirectory = "$(Split-Path $Profile)\Scripts"
+#region WindowsPowerShell (5.x)
 New-Item -ItemType Directory -Path "$(Split-Path $Profile)" -Force
-New-Item -ItemType SymbolicLink -Path "$Profile" -Value "$DotfilesDirectory\Powershell\Microsoft.PowerShell_profile.ps1" -Force
+New-Item -ItemType SymbolicLink -Path "$Profile" -Value "$DotfilesDirectory\WindowsPowerShell\Microsoft.PowerShell_profile.ps1" -Force
 New-Item -ItemType SymbolicLink -Path "$(Split-Path $Profile)\.psshortcut" -Value "$DotfilesDirectory\PowerShell\.psshortcut" -Force
-New-Item -ItemType SymbolicLink -Path "$ScriptsDirectory" -Value "$DotfilesDirectory\Powershell\Scripts" -Force
-$env:path += ";$ScriptsDirectory" # Add to path so we can use scripts below
+New-Item -ItemType SymbolicLink -Path "$(Split-Path $Profile)\Scripts" -Value "$DotfilesDirectory\PowerShell\Scripts" -Force
+$env:Path += ";$(Split-Path $Profile)\Scripts" # Add to path so we can use scripts below
 #endregion
 
-#region PowerShell Core
-$PowerShellCoreProfile = "$env:UserProfile\Documents\PowerShell\Microsoft.PowerShell_profile.ps1"
+#region PowerShell (Core/7.x)
+$PowerShellProfile = "$env:UserProfile\Documents\PowerShell\Microsoft.PowerShell_profile.ps1"
+New-Item -ItemType SymbolicLink -Path "$(Split-Path $PowerShellProfile)\Scripts" -Value "$DotfilesDirectory\PowerShell\Scripts" -Force
 cinst powershell-core -y
-New-Item -ItemType Directory -Path "$(Split-Path $PowerShellCoreProfile)" -Force
-New-Item -ItemType SymbolicLink -Path $PowerShellCoreProfile -Value "$DotfilesDirectory\PowerShellCore\Microsoft.PowerShell_profile.ps1" -Force
+$env:Path += ";$env:ProgramFiles\PowerShell\7"
+pwsh "$DotfilesDirectory\PowerShell\InstallModules.ps1"
+New-Item -ItemType Directory -Path "$(Split-Path $PowerShellProfile)" -Force
+New-Item -ItemType SymbolicLink -Path $PowerShellProfile -Value "$DotfilesDirectory\PowerShell\Microsoft.PowerShell_profile.ps1" -Force
+New-Item -ItemType SymbolicLink -Path "$(Split-Path $PowerShellProfile)\.psshortcut" -Value "$DotfilesDirectory\PowerShell\.psshortcut" -Force
+New-Item -ItemType SymbolicLink -Path "$(Split-Path $PowerShellProfile)\PoshThemes" -Value "$DotfilesDirectory\PowerShell\PoshThemes" -Force
 #endregion
 
 # Enable long file paths
@@ -152,6 +156,7 @@ cinst beyondcompare -y
 cinst insomnia-rest-api-client -y
 cinst keepass -y
 cinst keepass-yet-another-favicon-downloader -y
+cinst cascadiamonopl -y
 
 cinst visualstudio2019community -y
 cinst visualstudio2019-workload-netweb -y

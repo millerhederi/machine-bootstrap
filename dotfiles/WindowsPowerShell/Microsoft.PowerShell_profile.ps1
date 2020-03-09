@@ -1,7 +1,11 @@
-$env:path += ";$(Split-Path $Profile)\Scripts"
+$Host.UI.RawUI.WindowTitle = 'PowerShell'
+
+$dev = "$env:HomeDrive\dev"
+$scripts = "$(Split-Path $Profile)\Scripts"
+
+$env:path += ";$scripts"
 
 Import-Module posh-git
-Import-Module oh-my-posh
 Import-Module z
 
 #region Load private profiles
@@ -12,6 +16,15 @@ if (Test-Path -Path $PrivateProfilesRootDirectory -PathType Container)
 }
 #endregion
 
-Set-Theme Paradox-Custom
+function gwip ([string]$message) {
+    if (!$message) {
+        $message = "WIP"
+    }
+    else {
+        $message = "WIP: " + $message
+    }
 
-Initialize-PsShortcut
+    git commit -m $message
+}
+
+Set-Alias e Open-Explorer
