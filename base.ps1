@@ -171,6 +171,8 @@ cinst nodejs.install -y
 cinst gh -y
 cinst psutils -y
 cinst packer -y
+cinst intellijidea-community -y
+cinst openjdk11 -y
 
 # Remove all desktop icons
 Remove-Item "$env:UserProfile\Desktop\*.lnk"
