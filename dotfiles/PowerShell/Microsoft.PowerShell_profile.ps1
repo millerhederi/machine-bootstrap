@@ -1,4 +1,5 @@
-$env:path += ";$(Split-Path $Profile)\Scripts"
+$env:Path += ";$(Split-Path $Profile)\Scripts"
+$env:Path += ";$env:ProgramFiles\Sublime Merge"
 
 Import-Module posh-git
 Import-Module oh-my-posh
