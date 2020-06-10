@@ -129,7 +129,14 @@ if (-not (Get-AppxPackage CanonicalGroupLimited.Ubuntu18.04onWindows -ErrorActio
 cinst microsoft-windows-terminal -y
 $TerminalDirectory = "$env:LocalAppData\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe"
 New-Item -ItemType Directory -Path "$TerminalDirectory" -Force
-Remove-Item -Path "$TerminalDirectory\LocalState" -Force -Recurse -ErrorAction SilentlyContinue
+if  (Test-Path "$TerminalDirectory\LocalState") {
+    # Handle deleting either as a symbolic link or deleting as a directory
+    if ((Get-Item "$TerminalDirectory\LocalState").Attributes -match "ReparsePoint") {
+        (Get-Item "$TerminalDirectory\LocalState").Delete()
+    } else {
+        Remove-Item -Path "$TerminalDirectory\LocalState" -Force -Recurse -ErrorAction SilentlyContinue
+    }
+}
 New-Item -ItemType SymbolicLink -Path "$TerminalDirectory\LocalState" -Value "$DotfilesDirectory\Terminal" -Force
 #endregion
 
