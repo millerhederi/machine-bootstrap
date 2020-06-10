@@ -65,7 +65,6 @@ cinst vscode -y
 $env:Path += ";${env:ProgramFiles}\Microsoft VS Code\bin"
 code --install-extension ms-vscode.PowerShell
 code --install-extension ms-vscode.sublime-keybindings
-code --install-extension Ionide.Ionide-fsharp
 code --install-extension ms-azuretools.vscode-docker
 code --install-extension mark-hansen.hledger-vscode
 code --install-extension dsznajder.es7-react-js-snippets
