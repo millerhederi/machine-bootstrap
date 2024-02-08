@@ -136,7 +136,7 @@ function setup_fish() {
     # Add Fish shell to the list of acceptable shells
     # Check if Fish is already in /etc/shells to avoid duplicating it
     if ! grep -q "$(which fish)" /etc/shells; then
-        echo "$(which fish)" | tee -a /etc/shells
+        echo "$(which fish)" | sudo tee -a /etc/shells
         echo "Fish shell added to /etc/shells."
     fi
 
