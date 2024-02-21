@@ -155,6 +155,9 @@ function setup_fish() {
     echo "Installing fish plugins via fisher..."
     fish -c "fisher install IlanCosman/tide@v6"
     fish -c "fisher install jethrokuan/z"
+
+    echo "Setting up fish configurations..."
+    _link "$DOTFILES_DIR/fish/config.fish" "$HOME/.config/fish/config.fish"
 }
 
 function setup_tmux() {
