@@ -3,3 +3,5 @@ if status is-interactive
 end
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
+
+set -gx PATH $PATH ~/go/bin
