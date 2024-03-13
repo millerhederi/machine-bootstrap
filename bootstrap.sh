@@ -19,6 +19,38 @@ function _link() {
     echo "Creating a symbolic link to '$1' at '$2'"
 }
 
+function symlink_dotfiles() {
+    local stow_ignored=(
+        "fish"
+        "git"
+        "iterm2"
+        "tmux"
+        "vim"
+        "zsh"
+    )
+
+    echo "Setting up symlinks for all dotfiles with GNU Stow..."
+
+    for dir in "$DOTFILES_DIR"/*/
+    do
+        local pkg=$(basename "$dir")
+
+        # If pkg is in the set of ignored stow packages, skip it
+        if [[ " ${stow_ignored[@]} " =~ " $pkg " ]]
+        then
+            echo "Skipping creating symlinks for ignored package '$pkg'"
+            continue
+        fi
+
+        echo "Creating symlinks for package '$pkg'"
+        stow --target="$HOME" --dir="$DOTFILES_DIR" -S "$pkg"
+    done
+}
+
+function install_stow() {
+    brew install stow
+}
+
 function setup_ssh_keypair() {
     echo "Generating a new ssh keypair..."
 
@@ -210,6 +242,9 @@ function setup_zsh() {
 
 setup_ssh_keypair
 install_homebrew
+install_stow
+symlink_dotfiles
+
 install_homebrew_packages
 install_docker
 # install_work_homebrew_packages
