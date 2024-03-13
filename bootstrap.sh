@@ -165,6 +165,11 @@ function setup_tmux() {
     _link "$DOTFILES_DIR/tmux/.tmux.conf" "$HOME/.tmux.conf"
 }
 
+function setup_vim() {
+    echo "Setting up vim configurations..."
+    _link "$DOTFILES_DIR/vim/.vimrc" "$HOME/.vimrc"
+}
+
 function setup_zsh() {
     local zsh_custom_dir="$HOME/.oh-my-zsh/custom"
 
@@ -212,3 +217,4 @@ setup_git
 setup_fish
 setup_tmux
 setup_iterm2
+setup_vim
