@@ -12,5 +12,5 @@
     lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold yellow)<%an>%Creset' --abbrev-commit --date=relative
     rbi = rebase -i main
     rbc = rebase --continue
-    amend = commit --amend --no-edit
+    amend = "!git add -A && git commit --amend --no-edit"
     wip = "!git add -A && git commit -m \"WIP\""
