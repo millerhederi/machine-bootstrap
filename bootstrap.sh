@@ -21,9 +21,7 @@ function _link() {
 
 function symlink_dotfiles() {
     local stow_ignored=(
-        "git"
         "iterm2"
-        "zsh"
     )
 
     echo "Setting up symlinks for all dotfiles with GNU Stow..."
@@ -120,7 +118,7 @@ function install_work_homebrew_packages() {
 }
 
 function setup_git() {
-    echo "Setting up git dotfiles..."
+    echo "Setting up git..."
     
     if [ ! -f "$HOME/.gitconfig" ]
     then
@@ -132,9 +130,6 @@ function setup_git() {
     else
         echo "Config .gitconfig already exists, skipping"
     fi
-
-    _link "$DOTFILES_DIR/git/.gitconfig_xplat" "$HOME/.gitconfig_xplat"
-    _link "$DOTFILES_DIR/git/.gitconfig_mac" "$HOME/.gitconfig_plat"
 }
 
 function setup_iterm2() {
@@ -186,9 +181,6 @@ function setup_zsh() {
         echo "Oh-my-zsh already installed, skipping"
     fi
 
-    echo "Setting up zsh configurations..."
-    _link "$DOTFILES_DIR/zsh/.zshrc" "$HOME/.zshrc"
-
     echo "Installing powerlevel10k"
     if [ ! -d "$zsh_custom_dir/themes/powerlevel10k" ]
     then
@@ -207,9 +199,6 @@ function setup_zsh() {
     else
         echo "Autosuggestions is already cloned, skipping"
     fi
-
-    echo "Setting up powerlevel10k configurations..."
-    _link "$DOTFILES_DIR/zsh/.p10k.zsh" "$HOME/.p10k.zsh"
 }
 
 setup_ssh_keypair
