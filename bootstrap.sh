@@ -74,19 +74,6 @@ function install_homebrew() {
     fi
 }
 
-function install_docker() {
-    echo "Installing docker..."
-
-    brew install --cask docker
-
-    # brew install docker
-    # brew install docker-compose
-
-    # # Create a symbolic link to the docker plugin
-    # mkdir -p "$HOME/.docker/cli-plugins"
-    # ln -sfn "$HOMEBREW_PREFIX/opt/docker-compose/bin/docker-compose" "$HOME/.docker/cli-plugins/docker-compose"
-}
-
 function install_homebrew_packages() {
     echo "Installing base homebrew packages..."
 
@@ -116,6 +103,7 @@ function install_homebrew_packages() {
     # brew install --cask tailscale
     brew install --cask logseq
     brew install --cask brave-browser
+    brew install --cask docker
 }
 
 function install_work_homebrew_packages() {
@@ -234,7 +222,6 @@ install_stow
 symlink_dotfiles
 
 install_homebrew_packages
-install_docker
 # install_work_homebrew_packages
 setup_git
 setup_fish
