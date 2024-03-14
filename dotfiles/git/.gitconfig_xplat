@@ -1,5 +1,6 @@
 [core]
     autocrlf = false
+    pager = less -X -F
 [init]
     defaultBranch = main
 [difftool]
