@@ -87,6 +87,7 @@ function install_homebrew_packages() {
     brew install fish
     brew install fisher
     brew install tailwindcss
+    brew install starship
 
     brew install --cask keepassxc
     brew install --cask alfred
