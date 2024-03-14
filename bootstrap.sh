@@ -24,7 +24,6 @@ function symlink_dotfiles() {
         "fish"
         "git"
         "iterm2"
-        "tmux"
         "zsh"
     )
 
@@ -191,11 +190,6 @@ function setup_fish() {
     _link "$DOTFILES_DIR/fish/config.fish" "$HOME/.config/fish/config.fish"
 }
 
-function setup_tmux() {
-    echo "Setting up tmux configurations..."
-    _link "$DOTFILES_DIR/tmux/.tmux.conf" "$HOME/.tmux.conf"
-}
-
 function setup_zsh() {
     local zsh_custom_dir="$HOME/.oh-my-zsh/custom"
 
@@ -244,5 +238,4 @@ install_docker
 # install_work_homebrew_packages
 setup_git
 setup_fish
-setup_tmux
 setup_iterm2

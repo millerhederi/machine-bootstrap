@@ -11,3 +11,4 @@ function _delete_link() {
 }
 
 _delete_link "$HOME/.vimrc"
+_delete_link "$HOME/.tmux.conf"
