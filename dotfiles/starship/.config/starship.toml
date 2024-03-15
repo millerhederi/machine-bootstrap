@@ -5,7 +5,7 @@ continuation_prompt = "[.](green) "
 palette = "default"
 
 format = """
-[](fg:bg)\
+[ ](bg:bg)\
 $os\
 $hostname\
 $username\
