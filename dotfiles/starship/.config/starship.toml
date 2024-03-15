@@ -5,6 +5,7 @@ continuation_prompt = "[.](green) "
 palette = "default"
 
 format = """
+[╭─](fg:bg)\
 [ ](bg:bg)\
 $os\
 $hostname\
@@ -16,6 +17,7 @@ $git_status\
 [ ](fg:bg)\
 ( ?? $all)\
 $line_break\
+[╰─](fg:bg)\
 $character"""
 
 # https://starship.rs/advanced-config/#enable-right-prompt (not supported in Powershell)
