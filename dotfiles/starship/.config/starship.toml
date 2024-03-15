@@ -18,6 +18,10 @@ $git_status\
 $line_break\
 $character"""
 
+# https://starship.rs/advanced-config/#enable-right-prompt (not supported in Powershell)
+right_format = """
+$time"""
+
 [palettes.default]
 bg = "#444444"
 sep = "#5d5c5d"
@@ -106,3 +110,9 @@ format = "[[](bg:bg fg:sep)  $user ](bg:bg $style)"
 show_always = true
 style_root = "red"
 style_user = "white"
+
+[time]
+disabled = false
+time_format = "%R" # Hour:Minute Format
+style = "bg:#33658A"
+format = '[ ♥ $time ]($style)'
