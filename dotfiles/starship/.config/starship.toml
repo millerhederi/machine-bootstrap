@@ -1,5 +1,108 @@
-# Get editor completions based on the config schema
-"$schema" = 'https://starship.rs/config-schema.json'
+"$schema" = "https://starship.rs/config-schema.json"
 
-# Inserts a blank line between shell prompts
 add_newline = true
+continuation_prompt = "[.](green) "
+palette = "default"
+
+format = """
+[](fg:bg)\
+$os\
+$hostname\
+$username\
+$directory\
+$nodejs\
+$git_branch\
+$git_status\
+[ ](fg:bg)\
+( ?? $all)\
+$line_break\
+$character"""
+
+[palettes.default]
+bg = "#444444"
+sep = "#5d5c5d"
+
+[aws]
+disabled = true
+symbol = "  "
+
+[character]
+error_symbol = "[❯](bold red)"
+
+[cmd_duration]
+disabled = true
+
+[directory]
+repo_root_format = "[ $before_root_path]($before_repo_root_style)[$repo_root]($repo_root_style)[$path ]($style)[$read_only]($read_only_style)"
+read_only = " 󰌾"
+style = "bg:bg #0087ae"
+before_repo_root_style = "bg:bg #0087ae"
+repo_root_style = "bg:bg bold #03aefe"
+truncate_to_repo = false
+truncation_length = 0
+use_os_path_sep = false
+
+[docker_context]
+symbol = " "
+
+[dotnet]
+disabled = true
+
+[git_branch]
+format = "[[](bg:bg fg:sep) $symbol$branch(:$remote_branch) ]($style)"
+style = "bg:bg fg:#5fd701"
+symbol = " "
+
+[git_status]
+ahead = "[${count} ](bg:bg green)"
+behind = "[${count} ](bg:bg red)"
+deleted = ""
+diverged = "[${behind_count}](bg:bg red)[ ](bg:bg)[${ahead_count}](bg:bg green)[ ](bg:bg)"
+format = "([$ahead_behind$all_status]($style))"
+modified = "[ ](bg:bg yellow)"
+renamed = "[ ](bg:bg green)"
+staged = "[ ](bg:bg green)"
+stashed = ""
+style = "bg:bg"
+untracked = "[ ](bg:bg yellow)"
+
+[golang]
+symbol = " "
+
+[hostname]
+disabled = true
+format = "[$ssh_symbol$hostname ]($style)"
+ssh_only = false
+ssh_symbol = " "
+style = "bg:bg white"
+
+[java]
+symbol = " "
+
+[nodejs]
+format = "[[](bg:bg fg:sep)  $version ](bg:bg $style)"
+not_capable_style = "red"
+style = "green"
+
+[os]
+disabled = true
+format = "[ $symbol ]($style)"
+style = "bg:bg white"
+
+[os.symbols]
+Linux = ""
+Macos = ""
+Windows = ""
+
+[package]
+symbol = "󰏗 "
+
+[python]
+symbol = " "
+
+[username]
+disabled=true
+format = "[[](bg:bg fg:sep)  $user ](bg:bg $style)"
+show_always = true
+style_root = "red"
+style_user = "white"
