@@ -102,6 +102,7 @@ function install_homebrew_packages() {
     brew install --cask logseq
     brew install --cask brave-browser
     brew install --cask docker
+    brew install --cask powershell
 }
 
 function install_work_homebrew_packages() {
@@ -111,7 +112,6 @@ function install_work_homebrew_packages() {
     brew install --cask postman
     brew install --cask rider
     brew install --cask mattermost
-    brew install --cask powershell
     brew install --cask azure-data-studio
     brew install --cask dotnet
     
