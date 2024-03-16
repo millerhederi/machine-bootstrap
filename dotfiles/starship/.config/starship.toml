@@ -27,7 +27,7 @@ $line_break\
 
 [palettes.default]
 bg = "#444444"
-sep = "#5d5c5d"
+sep = "#858584"
 
 [fill]
 symbol = ' '
