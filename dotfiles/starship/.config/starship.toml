@@ -18,12 +18,12 @@ $git_status\
 ( ?? $all)\
 $fill\
 [](fg:bg)\
-[ ](bg:bg)\
+$character\
 $cmd_duration\
 $time\
 $line_break\
 [╰─](fg:bg)\
-$character"""
+[❯ ](fg:bg)"""
 
 [palettes.default]
 bg = "#444444"
@@ -35,14 +35,6 @@ symbol = ' '
 [aws]
 disabled = true
 symbol = "  "
-
-[character]
-error_symbol = "[❯](bold red)"
-
-[cmd_duration]
-disabled = false
-format = "[$duration [](bg:bg fg:sep)](bg:bg #a8a9a9)"
-min_time = 2_000
 
 [directory]
 repo_root_format = "[ $before_root_path]($before_repo_root_style)[$repo_root]($repo_root_style)[$path ]($style)[$read_only]($read_only_style)"
@@ -120,8 +112,18 @@ show_always = true
 style_root = "red"
 style_user = "white"
 
+[character]
+format = '$symbol'
+success_symbol = '[ ✔ ](bg:bg bold green)'
+error_symbol = '[ ✘ ](bg:bg bold red)'
+
+[cmd_duration]
+disabled = false
+format = "[[](bg:bg fg:sep) $duration ](bg:bg #a8a9a9)"
+min_time = 2_000
+
 [time]
 disabled = false
 time_format = "%T"
 utc_time_offset = "local"
-format = '[ $time ](bg:bg #5e8789)'
+format = '[[](bg:bg bold fg:sep) $time ](bg:bg #5e8789)'
