@@ -166,7 +166,6 @@ function setup_fish() {
     fi
 
     echo "Installing fish plugins via fisher..."
-    fish -c "fisher install IlanCosman/tide@v6"
     fish -c "fisher install jethrokuan/z"
 }
 
