@@ -16,17 +16,21 @@ $git_branch\
 $git_status\
 [ ](fg:bg)\
 ( ?? $all)\
+$fill\
+[](fg:bg)\
+[ ](bg:bg)\
+$cmd_duration\
+$time\
 $line_break\
 [╰─](fg:bg)\
 $character"""
 
-# https://starship.rs/advanced-config/#enable-right-prompt (not supported in Powershell)
-right_format = """
-$time"""
-
 [palettes.default]
 bg = "#444444"
 sep = "#5d5c5d"
+
+[fill]
+symbol = ' '
 
 [aws]
 disabled = true
@@ -36,7 +40,9 @@ symbol = "  "
 error_symbol = "[❯](bold red)"
 
 [cmd_duration]
-disabled = true
+disabled = false
+format = "[$duration [](bg:bg fg:sep)](bg:bg #a8a9a9)"
+min_time = 2_000
 
 [directory]
 repo_root_format = "[ $before_root_path]($before_repo_root_style)[$repo_root]($repo_root_style)[$path ]($style)[$read_only]($read_only_style)"
@@ -116,6 +122,6 @@ style_user = "white"
 
 [time]
 disabled = false
-time_format = "%R" # Hour:Minute Format
-style = "bg:#33658A"
-format = '[ ♥ $time ]($style)'
+time_format = "%T"
+utc_time_offset = "local"
+format = '[ $time ](bg:bg #5e8789)'
