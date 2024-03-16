@@ -74,6 +74,9 @@ function install_homebrew() {
 function install_homebrew_packages() {
     echo "Installing base homebrew packages..."
 
+    brew tap homebrew/cask-fonts
+    brew install --cask font-jetbrains-mono-nerd-font
+
     brew install git
     brew install go
     brew install jq
