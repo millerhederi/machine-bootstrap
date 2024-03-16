@@ -114,7 +114,7 @@ style_user = "white"
 
 [character]
 format = '$symbol'
-success_symbol = '[ ✔ ](bg:bg bold green)'
+success_symbol = '[ ✔ ](bg:bg bold #5fd701)'
 error_symbol = '[ ✘ ](bg:bg bold #d71e01)'
 
 [cmd_duration]
