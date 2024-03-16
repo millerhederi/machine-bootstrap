@@ -115,7 +115,7 @@ style_user = "white"
 [character]
 format = '$symbol'
 success_symbol = '[ ✔ ](bg:bg bold green)'
-error_symbol = '[ ✘ ](bg:bg bold red)'
+error_symbol = '[ ✘ ](bg:bg bold #d71e01)'
 
 [cmd_duration]
 disabled = false
