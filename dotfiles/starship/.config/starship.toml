@@ -126,4 +126,4 @@ min_time = 2_000
 disabled = false
 time_format = "%T"
 utc_time_offset = "local"
-format = '[[](bg:bg bold fg:sep) $time ](bg:bg #5e8789)'
+format = '[[](bg:bg fg:sep) $time ](bg:bg #5e8789)'
