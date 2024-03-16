@@ -28,6 +28,8 @@ $line_break\
 [palettes.default]
 bg = "#444444"
 sep = "#858584"
+green = "#5fd701"
+red = "#d71e01"
 
 [fill]
 symbol = ' '
@@ -55,7 +57,7 @@ disabled = true
 
 [git_branch]
 format = "[[](bg:bg fg:sep) $symbol$branch(:$remote_branch) ]($style)"
-style = "bg:bg fg:#5fd701"
+style = "bg:bg fg:green"
 symbol = " "
 
 [git_status]
@@ -115,8 +117,8 @@ style_user = "white"
 
 [character]
 format = '$symbol'
-success_symbol = '[ ✔ ](bg:bg bold #5fd701)'
-error_symbol = '[ ✘ ](bg:bg bold #d71e01)'
+success_symbol = '[ ✔ ](bg:bg bold green)'
+error_symbol = '[ ✘ ](bg:bg bold red)'
 
 [cmd_duration]
 disabled = false
