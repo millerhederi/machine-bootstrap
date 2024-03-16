@@ -1,0 +1,5 @@
+{
+    "go.toolsManagement.autoUpdate": true,
+    "editor.fontFamily": "'JetBrainsMono Nerd Font', Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontLigatures": false
+}
