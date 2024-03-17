@@ -184,15 +184,6 @@ function setup_zsh() {
         echo "Oh-my-zsh already installed, skipping"
     fi
 
-    echo "Installing powerlevel10k"
-    if [ ! -d "$zsh_custom_dir/themes/powerlevel10k" ]
-    then
-        git clone https://github.com/romkatv/powerlevel10k.git "$zsh_custom_dir/themes/powerlevel10k"
-        echo "Cloned powerlevel10k"
-    else
-        echo "Powerlevel10k is already cloned, skipping"
-    fi
-
     # https://github.com/zsh-users/zsh-autosuggestions/tree/master
     echo "Installing autosuggestions"
     if [ ! -d "$zsh_custom_dir/plugins/zsh-autosuggestions" ]
