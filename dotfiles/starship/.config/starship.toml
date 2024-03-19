@@ -28,8 +28,6 @@ $line_break\
 [palettes.default]
 bg = "#444444"
 sep = "#858584"
-green = "#5fd701"
-red = "#d71e01"
 
 [fill]
 symbol = ' '
@@ -42,9 +40,9 @@ symbol = "  "
 format = '[$path]($style)[$read_only]($read_only_style)[ ]($style)'
 repo_root_format = "[$before_root_path]($before_repo_root_style)[$repo_root]($repo_root_style)[$path]($style)[$read_only]($read_only_style)[ ]($style)"
 read_only = " 󰌾"
-style = "bg:bg #0087ae"
-before_repo_root_style = "bg:bg #0087ae"
-repo_root_style = "bg:bg bold #03aefe"
+style = "bg:bg blue"
+before_repo_root_style = "bg:bg blue"
+repo_root_style = "bg:bg bold bright-blue"
 truncate_to_repo = false
 truncation_length = 0
 use_os_path_sep = false
@@ -72,7 +70,7 @@ renamed = "[~](bg:bg green)"
 staged = "[+${count} ](bg:bg yellow)"
 stashed = ""
 style = "bg:bg"
-untracked = "[?${count} ](bg:bg #03aefe)"
+untracked = "[?${count} ](bg:bg bright-blue)"
 
 [golang]
 symbol = " "
@@ -117,8 +115,8 @@ style_user = "white"
 
 [character]
 format = '$symbol'
-success_symbol = '[ ✔ ](bg:bg bold green)'
-error_symbol = '[ ✘ ](bg:bg bold red)'
+success_symbol = '[ ✔ ](bg:bg green)'
+error_symbol = '[ ✘ ](bg:bg red)'
 
 [cmd_duration]
 disabled = false
