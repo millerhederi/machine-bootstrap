@@ -75,6 +75,7 @@ style = "bg:bg"
 untracked = "[?${count} ](bg:bg bright-blue)"
 
 [golang]
+disabled = true
 symbol = " "
 
 [hostname]
