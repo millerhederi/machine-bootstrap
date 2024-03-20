@@ -7,6 +7,7 @@ palette = "default"
 format = """
 [╭─](fg:bg)\
 [ ](bg:bg)\
+$shell\
 $directory\
 $nodejs\
 $git_branch\
@@ -29,13 +30,17 @@ sep = "#858584"
 [fill]
 symbol = ' '
 
+[shell]
+disabled = false
+format = "[$indicator ](bg:bg bold white)"
+
 [aws]
 disabled = true
 symbol = "  "
 
 [directory]
-format = '[$path]($style)[$read_only]($read_only_style)[ ]($style)'
-repo_root_format = "[$before_root_path]($before_repo_root_style)[$repo_root]($repo_root_style)[$path]($style)[$read_only]($read_only_style)[ ]($style)"
+format = '[[](bg:bg fg:sep) $path]($style)[$read_only]($read_only_style)[ ]($style)'
+repo_root_format = "[[](bg:bg fg:sep) $before_root_path]($before_repo_root_style)[$repo_root]($repo_root_style)[$path]($style)[$read_only]($read_only_style)[ ]($style)"
 read_only = " 󰌾"
 style = "bg:bg blue"
 before_repo_root_style = "bg:bg blue"
