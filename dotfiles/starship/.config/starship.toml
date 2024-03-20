@@ -117,11 +117,11 @@ error_symbol = '[ ✘ ](bg:bg red)'
 
 [cmd_duration]
 disabled = false
-format = "[[](bg:bg fg:sep) $duration ](bg:bg #a8a9a9)"
+format = "[[](bg:bg fg:sep) $duration ](bg:bg bold white)"
 min_time = 2_000
 
 [time]
 disabled = false
 time_format = "%T"
 utc_time_offset = "local"
-format = '[[](bg:bg fg:sep) $time ](bg:bg #5e8789)'
+format = '[[](bg:bg fg:sep) $time ](bg:bg white)'
