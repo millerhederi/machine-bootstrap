@@ -7,9 +7,6 @@ palette = "default"
 format = """
 [╭─](fg:bg)\
 [ ](bg:bg)\
-$os\
-$hostname\
-$username\
 $directory\
 $nodejs\
 $git_branch\
