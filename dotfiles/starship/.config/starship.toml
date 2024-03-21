@@ -11,7 +11,9 @@ $shell\
 $directory\
 $nodejs\
 $git_branch\
+$git_state\
 $git_status\
+$git_commit\
 [ ](fg:bg)\
 ( ?? $all)\
 $fill\
@@ -60,7 +62,14 @@ format = "[[](bg:bg fg:sep) $symbol$branch(:$remote_branch) ]($style)"
 style = "bg:bg fg:green"
 symbol = " "
 
+[git_state]
+format = "[[](bg:bg fg:sep) $state $progress_current/$progress_total ](bg:bg yellow)"
+
+[git_commit]
+format ="[\\($hash$tag\\) ](bg:bg yellow)"
+
 [git_status]
+conflicted = "[!${count} ](bg:bg yellow)"
 ahead = "[⇡${count} ](bg:bg green)"
 behind = "[⇣${count} ](bg:bg red)"
 deleted = ""
