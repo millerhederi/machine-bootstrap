@@ -77,6 +77,7 @@ function install_homebrew_packages() {
     brew tap homebrew/cask-fonts
     brew install --cask font-jetbrains-mono-nerd-font
 
+    brew install tree
     brew install git
     brew install go
     brew install jq
