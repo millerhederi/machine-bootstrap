@@ -93,6 +93,7 @@ function install_homebrew_packages() {
     brew install tailwindcss
     brew install starship
 
+    brew install --cask alt-tab
     brew install --cask keepassxc
     brew install --cask alfred
     brew install --cask iterm2
