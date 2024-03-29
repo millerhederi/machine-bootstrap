@@ -81,6 +81,7 @@ function install_homebrew_packages() {
     brew install git
     brew install go
     brew install jq
+    brew install yq
     brew install sqlite
     brew install youtube-dl
     brew install tmux
