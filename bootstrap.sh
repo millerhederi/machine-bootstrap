@@ -88,6 +88,7 @@ function install_homebrew_packages() {
     brew install awscli
     brew install hledger
     brew install vegeta
+    brew install golangci-lint
     brew install ffmpeg
     brew install fish
     brew install fisher
