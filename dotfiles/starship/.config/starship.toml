@@ -52,6 +52,7 @@ truncation_length = 0
 use_os_path_sep = false
 
 [docker_context]
+disabled = true
 symbol = " "
 
 [dotnet]
