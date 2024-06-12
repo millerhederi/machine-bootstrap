@@ -99,6 +99,7 @@ style = "bg:bg white"
 symbol = " "
 
 [nodejs]
+disabled = true
 format = "[[](bg:bg fg:sep)  $version ](bg:bg $style)"
 not_capable_style = "red"
 style = "green"
