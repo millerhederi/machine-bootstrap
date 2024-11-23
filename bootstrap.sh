@@ -80,20 +80,21 @@ function install_homebrew_packages() {
     brew install tree
     brew install git
     brew install go
-    brew install jq
-    brew install yq
+    brew install jq               # JSON processor
+    brew install yq               # YAML processor
     brew install sqlite
     brew install youtube-dl
     brew install tmux
     brew install awscli
-    brew install hledger
-    brew install vegeta
+    brew install hledger          # Plain text accounting
+    brew install vegeta           # HTTP load testing tool
     brew install golangci-lint
     brew install ffmpeg
-    brew install fish
-    brew install fisher
+    brew install fish             # Fish shell
+    brew install fisher           # Fish plugin manager
     brew install tailwindcss
-    brew install starship
+    brew install starship         # Cross-shell prompt
+    brew install baobab           # Disk usage analyzer
 
     brew install --cask alt-tab
     brew install --cask keepassxc
@@ -116,7 +117,8 @@ function install_work_homebrew_packages() {
     echo "Installing StatMuse specific homebrew packages..."
 
     brew install --cask signal
-    brew install --cask postman
+    # brew install --cask postman
+    brew install --cask bruno
     brew install --cask rider
     brew install --cask mattermost
     brew install --cask azure-data-studio
