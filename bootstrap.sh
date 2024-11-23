@@ -96,7 +96,6 @@ function install_homebrew_packages() {
     brew install starship         # Cross-shell prompt
     brew install baobab           # Disk usage analyzer
 
-    brew install --cask alt-tab
     brew install --cask keepassxc
     brew install --cask alfred
     brew install --cask iterm2
