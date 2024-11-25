@@ -113,7 +113,7 @@ function install_homebrew_packages() {
 }
 
 function install_work_homebrew_packages() {
-    echo "Installing StatMuse specific homebrew packages..."
+    echo "Installing work specific homebrew packages..."
 
     brew install --cask signal
     # brew install --cask postman
