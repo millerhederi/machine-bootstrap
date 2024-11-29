@@ -107,6 +107,7 @@ function install_homebrew_packages() {
     brew install --cask brave-browser
     brew install --cask docker
     brew install --cask powershell
+    brew install --cask nextcloud
 }
 
 function install_work_homebrew_packages() {
