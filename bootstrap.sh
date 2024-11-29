@@ -74,9 +74,6 @@ function install_homebrew() {
 function install_homebrew_packages() {
     echo "Installing base homebrew packages..."
 
-    brew tap homebrew/cask-fonts
-    brew install --cask font-jetbrains-mono-nerd-font
-
     brew install tree
     brew install git
     brew install go
@@ -96,6 +93,7 @@ function install_homebrew_packages() {
     brew install starship         # Cross-shell prompt
     brew install baobab           # Disk usage analyzer
 
+    brew install --cask font-jetbrains-mono-nerd-font
     brew install --cask keepassxc
     brew install --cask alfred
     brew install --cask iterm2
