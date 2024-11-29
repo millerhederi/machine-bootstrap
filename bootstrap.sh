@@ -38,7 +38,7 @@ function symlink_dotfiles() {
         fi
 
         echo "Creating symlinks for package '$pkg'"
-        stow --target="$HOME" --dir="$DOTFILES_DIR" -R "$pkg"
+        stow --target="$HOME" --dir="$DOTFILES_DIR" -R --no-folding "$pkg"
     done
 }
 
