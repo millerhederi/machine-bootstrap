@@ -103,6 +103,7 @@ function install_homebrew_packages() {
     brew install --cask scroll-reverser
     brew install --cask balenaetcher
     # brew install --cask tailscale
+    # brew install --cask bitwarden
     brew install --cask logseq
     brew install --cask brave-browser
     brew install --cask docker
