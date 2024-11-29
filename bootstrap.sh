@@ -80,7 +80,6 @@ function install_homebrew_packages() {
     brew install jq               # JSON processor
     brew install yq               # YAML processor
     brew install sqlite
-    brew install youtube-dl
     brew install tmux
     brew install awscli
     brew install hledger          # Plain text accounting
