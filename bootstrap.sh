@@ -121,7 +121,7 @@ function install_work_homebrew_packages() {
     brew install --cask rider
     brew install --cask mattermost
     brew install --cask azure-data-studio
-    brew install --cask dotnet
+    brew install --cask dotnet-sdk
     
     brew install node
 }
