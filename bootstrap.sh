@@ -206,7 +206,7 @@ install_stow
 symlink_dotfiles
 
 install_homebrew_packages
-# install_work_homebrew_packages
+install_work_homebrew_packages
 setup_git
 setup_fish
 setup_iterm2
