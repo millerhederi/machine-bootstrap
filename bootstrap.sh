@@ -110,6 +110,7 @@ function install_homebrew_packages() {
     brew install --cask powershell
     brew install --cask nextcloud
     brew install --cask syncthing
+    brew install --cask goland
 }
 
 function install_work_homebrew_packages() {
