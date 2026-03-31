@@ -90,7 +90,7 @@ function install_homebrew_packages() {
     brew install fisher           # Fish plugin manager
     brew install tailwindcss
     brew install starship         # Cross-shell prompt
-    brew install baobab           # Disk usage analyzer
+    # brew install baobab           # Disk usage analyzer
     brew install bentobox
 
     brew install --cask font-jetbrains-mono-nerd-font
@@ -100,26 +100,26 @@ function install_homebrew_packages() {
     brew install --cask visual-studio-code
     brew install --cask sublime-merge
     brew install --cask sublime-text
-    #brew install --cask rectangle
+    # brew install --cask rectangle
     brew install --cask scroll-reverser
-    brew install --cask balenaetcher
+    # brew install --cask balenaetcher
     # brew install --cask tailscale
     # brew install --cask bitwarden
     brew install --cask logseq
     brew install --cask brave-browser
     brew install --cask docker
-    brew install --cask powershell
+    # brew install --cask powershell
     brew install --cask nextcloud
     brew install --cask syncthing
-    brew install --cask goland
+    # brew install --cask goland
 }
 
 function install_work_homebrew_packages() {
     echo "Installing work specific homebrew packages..."
 
-    brew install --cask signal
+    # brew install --cask signal
     # brew install --cask postman
-    brew install --cask bruno
+    # brew install --cask bruno
     brew install --cask rider
     #brew install --cask mattermost
     brew install --cask azure-data-studio
@@ -208,7 +208,7 @@ install_stow
 symlink_dotfiles
 
 install_homebrew_packages
-install_work_homebrew_packages
+# install_work_homebrew_packages
 setup_git
 setup_fish
 setup_iterm2
