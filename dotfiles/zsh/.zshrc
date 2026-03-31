@@ -13,3 +13,5 @@ export PATH="~/go/bin:$PATH"
 
 # Enable starship prompt
 eval "$(starship init zsh)"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

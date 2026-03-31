@@ -16,6 +16,7 @@
         "*.tsx": "${capture}.ts",
         "tsconfig.json": "tsconfig.*.json",
         "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, bun.lockb",
+        "*.templ": "${capture}_templ.go,${capture}_templ.txt",
         "*.sqlite": "${capture}.${extname}-*",
         "*.db": "${capture}.${extname}-*",
         "*.sqlite3": "${capture}.${extname}-*",
@@ -23,5 +24,13 @@
         "*.sdb": "${capture}.${extname}-*",
         "*.s3db": "${capture}.${extname}-*"
     },
-    "makefile.configureOnOpen": false
+    "makefile.configureOnOpen": false,
+    "github.copilot.nextEditSuggestions.enabled": true,
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "aws.cloudformation.telemetry.enabled": false,
+    "claudeCode.preferredLocation": "panel",
+    "claudeCode.selectedModel": "default",
+    "chat.viewSessions.orientation": "stacked"
 }
